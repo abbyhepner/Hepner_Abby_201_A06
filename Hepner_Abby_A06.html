@@ -3393,7 +3393,7 @@ $SO
 <p>Use the list created in Part c and an appropriate apply function to round each value to two decimal places.</p>
 <p>Store the output as a vector and print the results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># round each value to two decimal places</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># round each val to two decimal places</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rounded_points_per_game <span class="ot">&lt;-</span> <span class="fu">sapply</span>(points_per_game, round, <span class="dv">2</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>rounded_points_per_game</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3429,26 +3429,26 @@ $SO
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># apply function to each element in matrix</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>rounded_mat_rand <span class="ot">&lt;-</span> <span class="fu">apply</span>(mat_rand, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, round_based_on_digits)</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># print both original and rounded matrices</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># print both original and rounded matrices (just to check)</span></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,] 1277  509 1006   60  543
-[2,]  180 1134 1926 1344   15
-[3,]  301  296   73   89  310
-[4,] 1508  961  893  255   57
-[5,] 1367   22   19 1912   35
-[6,] 1672   16 1615   85  338</code></pre>
+[1,] 1049   61   53  228   22
+[2,]  680 1342 1546   72  499
+[3,] 1101   68 1297  841  811
+[4,] 1582   60   39   15 1409
+[5,]  720 1129  628 1403 1128
+[6,]  986  369   33  992   93</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rounded_mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,] 1000  500 1000   60  500
-[2,]  200 1000 2000 1000   20
-[3,]  300  300   70   90  300
-[4,] 2000 1000  900  300   60
-[5,] 1000   20   20 2000   40
-[6,] 2000   20 2000   80  300</code></pre>
+[1,] 1000   60   50  200   20
+[2,]  700 1000 2000   70  500
+[3,] 1000   70 1000  800  800
+[4,] 2000   60   40   20 1000
+[5,]  700 1000  600 1000 1000
+[6,] 1000  400   30 1000   90</code></pre>
 </div>
 </div>
 </section>
@@ -3526,6 +3526,24 @@ $SO
 <p>Write a recursive function that calculates the sum of the digits in a number.</p>
 <p>Example: The number 312 would return 6 (3 + 1 + 2)</p>
 <p>Run your function with 935068.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># recursive function to sum digits of a num</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sum_digits <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n <span class="sc">%%</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fu">sum_digits</span>(n <span class="sc">%/%</span> <span class="dv">10</span>))</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># test function with 935068</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sum_digits</span>(<span class="dv">935068</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31</code></pre>
+</div>
+</div>
 </section>
 </section>
 
