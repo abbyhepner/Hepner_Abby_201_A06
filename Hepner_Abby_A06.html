@@ -3433,22 +3433,22 @@ $SO
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  320   72   55   74 1729
-[2,]  694 1284 1885 1741  874
-[3,]   69   10   93   96 1125
-[4,]  696 1082 1118   83  343
-[5,]  230  891 1928   14   86
-[6,]  787 1058  107 1834  321</code></pre>
+[1,] 1277  509 1006   60  543
+[2,]  180 1134 1926 1344   15
+[3,]  301  296   73   89  310
+[4,] 1508  961  893  255   57
+[5,] 1367   22   19 1912   35
+[6,] 1672   16 1615   85  338</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rounded_mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  300   70   60   70 2000
-[2,]  700 1000 2000 2000  900
-[3,]   70   10   90  100 1000
-[4,]  700 1000 1000   80  300
-[5,]  200  900 2000   10   90
-[6,]  800 1000  100 2000  300</code></pre>
+[1,] 1000  500 1000   60  500
+[2,]  200 1000 2000 1000   20
+[3,]  300  300   70   90  300
+[4,] 2000 1000  900  300   60
+[5,] 1000   20   20 2000   40
+[6,] 2000   20 2000   80  300</code></pre>
 </div>
 </div>
 </section>
@@ -3504,6 +3504,21 @@ $SO
 <p>Example (this is NOT the answer just an example of what goes in the {}):</p>
 <p>“The maximum median annual temperature of 68.25 occurred in 2017 and the minimum median annual temperature of 57.15 occurred in 1907.”</p>
 <p>Note: This code should still run successfully even if the numbers were to change.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate median annual temp for Colorado</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>median_CO_temps <span class="ot">&lt;-</span> <span class="fu">apply</span>(CO_temps[,<span class="sc">-</span><span class="dv">1</span>], <span class="dv">1</span>, median)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># find year with highest and lowest median temp</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>max_median_temp <span class="ot">&lt;-</span> <span class="fu">max</span>(median_CO_temps)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>min_median_temp <span class="ot">&lt;-</span> <span class="fu">min</span>(median_CO_temps)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>max_year <span class="ot">&lt;-</span> CO_temps<span class="sc">$</span>year[<span class="fu">which.max</span>(median_CO_temps)]</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>min_year <span class="ot">&lt;-</span> CO_temps<span class="sc">$</span>year[<span class="fu">which.min</span>(median_CO_temps)]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;The maximum median annual temperature of &quot;</span>, max_median_temp, <span class="st">&quot; occurred in &quot;</span>, max_year, <span class="st">&quot;and the minimum median annual temperature of &quot;</span>, min_median_temp, <span class="st">&quot; occurred in &quot;</span>, min_year, <span class="st">&quot;.&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The maximum median annual temperature of 67.8 occurred in 1963and the minimum median annual temperature of 51.7 occurred in 1984.&quot;</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="question-5-5-points" class="level2">
