@@ -3433,22 +3433,22 @@ $SO
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   45   74  390 1496  934
-[2,] 1201  910 1957 1329 1488
-[3,] 1250 1218   68  535 1149
-[4,] 1208   19  669   86   65
-[5,]  758   67  250   80   72
-[6,]  856   55 1245  673  146</code></pre>
+[1,]  320   72   55   74 1729
+[2,]  694 1284 1885 1741  874
+[3,]   69   10   93   96 1125
+[4,]  696 1082 1118   83  343
+[5,]  230  891 1928   14   86
+[6,]  787 1058  107 1834  321</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rounded_mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   40   70  400 1000  900
-[2,] 1000  900 2000 1000 1000
-[3,] 1000 1000   70  500 1000
-[4,] 1000   20  700   90   60
-[5,]  800   70  200   80   70
-[6,]  900   60 1000  700  100</code></pre>
+[1,]  300   70   60   70 2000
+[2,]  700 1000 2000 2000  900
+[3,]   70   10   90  100 1000
+[4,]  700 1000 1000   80  300
+[5,]  200  900 2000   10   90
+[6,]  800 1000  100 2000  300</code></pre>
 </div>
 </div>
 </section>
@@ -3489,6 +3489,11 @@ $SO
 <li>Slice the data frame to only include the state of Virginia (VA).</li>
 </ul>
 <p>No need to print any output here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>CO_temps <span class="ot">&lt;-</span> <span class="fu">subset</span>(max_temps, state <span class="sc">==</span> <span class="st">&quot;CO&quot;</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>OH_temps <span class="ot">&lt;-</span> <span class="fu">subset</span>(max_temps, state <span class="sc">==</span> <span class="st">&quot;OH&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>VA_temps <span class="ot">&lt;-</span> <span class="fu">subset</span>(max_temps, state <span class="sc">==</span> <span class="st">&quot;VA&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="part-c-5-points" class="level3">
 <h3 class="anchored" data-anchor-id="part-c-5-points">Part c (5 points)</h3>

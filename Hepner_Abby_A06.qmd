@@ -246,7 +246,9 @@ Create three new data frames by slicing the data by state.
 No need to print any output here.
 
 ```{r}
-
+CO_temps <- subset(max_temps, state == "CO")
+OH_temps <- subset(max_temps, state == "OH")
+VA_temps <- subset(max_temps, state == "VA")
 ```
 
 
